@@ -19,22 +19,24 @@ public class Fish extends AbstractAnimal {
     }
 
     @Override
-    public String breathe() {
+    public String getBreathe() {
         return "gills";
     }
 
     @Override
-    public String move() {
+    public String getMove() {
         return "swim";
     }
 
     @Override
-    public String reproduce() {
+    public String getReproduce() {
         return "eggs";
     }
 
     @Override
     public String toString() {
-        return "Fish" + "\nName: " + name + "\nYear Discovered: " + yearDiscovered;
+        return "Fish{" + "Name: " + name + ", Year Discovered: " + yearDiscovered + ", Breathes: " + this.getBreathe()
+                + ", Eating: " + this.eat() + ", Locomotion: " + this.getMove() + ", Reproduction: "
+                + this.getReproduce() + "}";
     }
 }

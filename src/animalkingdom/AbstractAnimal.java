@@ -3,6 +3,8 @@ package animalkingdom;
 public abstract class AbstractAnimal {
 
     // Fields:
+    int id;
+    int maxId = 0;
     int yearDiscovered;
     String name;
 
@@ -20,18 +22,18 @@ public abstract class AbstractAnimal {
 
     public abstract int getYearDiscovered();
 
-    public abstract String breathe();
+    public abstract String getBreathe();
 
-    public abstract String move();
+    public abstract String getMove();
 
-    public abstract String reproduce();
+    public abstract String getReproduce();
 
     public String eat() {
-        return "All animals consume food the same way.";
+        return "Same for each";
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
 }

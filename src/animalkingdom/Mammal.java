@@ -19,22 +19,24 @@ public class Mammal extends AbstractAnimal {
     }
 
     @Override
-    public String breathe() {
+    public String getBreathe() {
         return "lungs";
     }
 
     @Override
-    public String move() {
+    public String getMove() {
         return "walk";
     }
 
     @Override
-    public String reproduce() {
+    public String getReproduce() {
         return "live births";
     }
 
     @Override
     public String toString() {
-        return "Mammal" + "\nName: " + name + "\nYear Discovered: " + yearDiscovered;
+        return "Mammal{" + "Name: " + name + ", Year Discovered: " + yearDiscovered + ", Breathes: " + this.getBreathe()
+                + ", Eating: " + this.eat() + ", Locomotion: " + this.getMove() + ", Reproduction: "
+                + this.getReproduce() + "}";
     }
 }

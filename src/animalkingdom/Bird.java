@@ -19,22 +19,24 @@ public class Bird extends AbstractAnimal {
     }
 
     @Override
-    public String breathe() {
+    public String getBreathe() {
         return "lungs";
     }
 
     @Override
-    public String move() {
+    public String getMove() {
         return "fly";
     }
 
     @Override
-    public String reproduce() {
+    public String getReproduce() {
         return "eggs";
     }
 
     @Override
     public String toString() {
-        return "Bird" + "\nName: " + name + "\nYear Discovered: " + yearDiscovered;
+        return "Bird{" + "Name: " + name + ", Year Discovered: " + yearDiscovered + ", Breathes: " + this.getBreathe()
+                + ", Eating: " + this.eat() + ", Locomotion: " + this.getMove() + ", Reproduction: "
+                + this.getReproduce() + "}";
     }
 }
