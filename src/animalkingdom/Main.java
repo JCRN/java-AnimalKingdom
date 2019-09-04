@@ -76,20 +76,20 @@ public class Main {
         animalsList.sort((a1, a2) -> a1.getMove().compareToIgnoreCase(a2.getMove()));
         animalsList.forEach((a) -> System.out.println(a));
 
-        System.out.println("******** FILTERS *********");
+        System.out.println("\n\n******** FILTERS *********");
 
         System.out.println("\n\n*** Animals filtered by only those that have lungs");
         printAnimals(animalsList, a -> a.getBreathe() == "lungs");
 
-        System.out.println("\n\n*** Animals filtered by only those that have lungs and were discovered in 1758");
+        System.out.println("\n*** Animals filtered by only those that have lungs and were discovered in 1758");
         printAnimals(animalsList, a -> a.getBreathe() == "lungs" && a.getYearDiscovered() == 1758);
 
-        System.out.println("\n\n*** Animals filtered by only those that lay eggs and have lungs");
+        System.out.println("\n*** Animals filtered by only those that lay eggs and have lungs");
         printAnimals(animalsList, a -> a.getReproduce() == "eggs" && a.getBreathe() == "lungs");
 
         System.out.println("\n*** Animals sorted alphabetically then filtered by those that were discovered in 1758");
         animalsList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
-        printAnimals(animalsList, a -> a.getYearDiscovered() == "1758");
+        printAnimals(animalsList, a -> a.getYearDiscovered() == 1758);
 
     }
 }
