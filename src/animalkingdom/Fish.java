@@ -32,4 +32,9 @@ public class Fish extends AbstractAnimal {
     public String reproduce() {
         return "eggs";
     }
+
+    @Override
+    public String toString() {
+        return "Fish" + "\nName: " + name + "\nYear Discovered: " + yearDiscovered;
+    }
 }

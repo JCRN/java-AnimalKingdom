@@ -1,9 +1,9 @@
 package animalkingdom;
 
-public class Birds extends AbstractAnimal {
+public class Mammal extends AbstractAnimal {
 
     // Constructor
-    public Birds(String name, int yearDiscovered) {
+    public Mammal(String name, int yearDiscovered) {
         super(name, yearDiscovered);
     }
 
@@ -25,11 +25,16 @@ public class Birds extends AbstractAnimal {
 
     @Override
     public String move() {
-        return "fly";
+        return "walk";
     }
 
     @Override
     public String reproduce() {
-        return "eggs";
+        return "live births";
+    }
+
+    @Override
+    public String toString() {
+        return "Mammal" + "\nName: " + name + "\nYear Discovered: " + yearDiscovered;
     }
 }
