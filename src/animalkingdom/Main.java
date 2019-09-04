@@ -8,7 +8,9 @@ public class Main {
     public static void printAnimals(ArrayList<AbstractAnimal> animals, CheckAnimal tester) {
         for (AbstractAnimal a : animals) {
             if (tester.test(a)) {
-                System.out.println(a.getName());
+                System.out.println("Name: " + a.getName() + ", Year Discovered: " + a.getYearDiscovered()
+                        + ", Breathing: " + a.getBreathe() + ", Locomotion: " + a.getMove() + ", Reproduction: "
+                        + a.getReproduce());
             }
         }
     }
@@ -61,6 +63,7 @@ public class Main {
 
         // Use Lambda expressions to sort animalsList
         System.out.println("******** SORTS *********");
+
         System.out.println("\n\n*** Animals sorted in descending order by year discovered");
         animalsList.sort((a1, a2) -> a2.getYearDiscovered() - a1.getYearDiscovered());
         animalsList.forEach((a) -> System.out.println(a));
@@ -74,8 +77,19 @@ public class Main {
         animalsList.forEach((a) -> System.out.println(a));
 
         System.out.println("******** FILTERS *********");
-        System.out.println("\n\n*** Animals soted by only those that have lungs");
+
+        System.out.println("\n\n*** Animals filtered by only those that have lungs");
         printAnimals(animalsList, a -> a.getBreathe() == "lungs");
+
+        System.out.println("\n\n*** Animals filtered by only those that have lungs and were discovered in 1758");
+        printAnimals(animalsList, a -> a.getBreathe() == "lungs" && a.getYearDiscovered() == 1758);
+
+        System.out.println("\n\n*** Animals filtered by only those that lay eggs and have lungs");
+        printAnimals(animalsList, a -> a.getReproduce() == "eggs" && a.getBreathe() == "lungs");
+
+        System.out.println("\n*** Animals sorted alphabetically then filtered by those that were discovered in 1758");
+        animalsList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        printAnimals(animalsList, a -> a.getYearDiscovered() == "1758");
 
     }
 }
